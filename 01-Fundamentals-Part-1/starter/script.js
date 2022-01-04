@@ -28,3 +28,16 @@
 //     console.log(`John's BMI (${bmiJohn}) is higher than Mark's (${bmiMark})`)
 // }
 
+const avgDolphins = (97 + 112 + 101) / 3;
+const avgKoalas = (109 + 95 + 106) / 3;
+const minScore = 100;
+
+if (avgDolphins > avgKoalas && avgDolphins >= minScore) {
+    console.log(`The Dolphins get the trophy 🏆`);
+} else if (avgDolphins < avgKoalas && avgKoalas >= minScore) {
+    console.log(`The Koalas get the trophy 🏆`);
+} else if (avgDolphins === avgKoalas && avgDolphins >= minScore && avgKoalas >= minScore) {
+    console.log(`Draw.`);
+} else {
+    console.log(`No one wins!`)
+}
