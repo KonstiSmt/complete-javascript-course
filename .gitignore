@@ -8,6 +8,7 @@ __pycache__/
 *$py.class
 
 .idea
+.idea/*
 .env
 
 # C extensions
