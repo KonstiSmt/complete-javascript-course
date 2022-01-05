@@ -27,17 +27,21 @@
 // } else {
 //     console.log(`John's BMI (${bmiJohn}) is higher than Mark's (${bmiMark})`)
 // }
-
-const avgDolphins = (97 + 112 + 101) / 3;
-const avgKoalas = (109 + 95 + 106) / 3;
-const minScore = 100;
-
-if (avgDolphins > avgKoalas && avgDolphins >= minScore) {
-    console.log(`The Dolphins get the trophy 🏆`);
-} else if (avgDolphins < avgKoalas && avgKoalas >= minScore) {
-    console.log(`The Koalas get the trophy 🏆`);
-} else if (avgDolphins === avgKoalas && avgDolphins >= minScore && avgKoalas >= minScore) {
-    console.log(`Draw.`);
-} else {
-    console.log(`No one wins!`)
-}
+//
+// const avgDolphins = (97 + 112 + 101) / 3;
+// const avgKoalas = (109 + 95 + 106) / 3;
+// const minScore = 100;
+//
+// if (avgDolphins > avgKoalas && avgDolphins >= minScore) {
+//     console.log(`The Dolphins get the trophy 🏆`);
+// } else if (avgDolphins < avgKoalas && avgKoalas >= minScore) {
+//     console.log(`The Koalas get the trophy 🏆`);
+// } else if (avgDolphins === avgKoalas && avgDolphins >= minScore && avgKoalas >= minScore) {
+//     console.log(`Draw.`);
+// } else {
+//     console.log(`No one wins!`);
+// }
+//
+// const billValue = 430;
+// const tip = 50 < billValue && billValue < 300 ? billValue * 0.15 : billValue * 0.2;
+// console.log(`The bill was ${billValue}, the tip was ${tip}, and the total value ${billValue + tip}`);
