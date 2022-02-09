@@ -8,33 +8,6 @@ const player1 = document.querySelector('.player--1');
 
 newGame();
 
-function rollDice() {
-    if (playing) {
-        const number = Math.trunc(Math.random() * 6) + 1;
-        dice.src = `dice-${number}.png`;
-        dice.style.display = 'block';
-        if (number === 1) {
-            switchPlayer();
-        } else {
-            currentScore += number;
-            setCurrentScore(activePlayer);
-        }
-    }
-}
-
-function hold() {
-    if (playing) {
-        if (activePlayer) {
-            score1 += currentScore;
-        } else {
-            score0 += currentScore;
-        }
-        setScore(activePlayer);
-        checkWin();
-        if (playing) switchPlayer();
-    }
-}
-
 function newGame() {
     dice.style.display = 'none';
     activePlayer = 0;
@@ -52,6 +25,40 @@ function newGame() {
     playing = true;
 }
 
+function setScore(player) {
+    document.querySelector(`#score--${player}`).textContent = player ? score1 : score0;
+}
+
+function setCurrentScore(player) {
+    document.querySelector(`#current--${player}`).textContent = currentScore;
+}
+
+function rollDice() {
+    if (!playing) return;
+    const number = Math.trunc(Math.random() * 6) + 1;
+    dice.src = `dice-${number}.png`;
+    dice.style.display = 'block';
+    if (number === 1) {
+        switchPlayer();
+    } else {
+        currentScore += number;
+        setCurrentScore(activePlayer);
+    }
+
+}
+
+function hold() {
+    if (!playing) return;
+    if (activePlayer) {
+        score1 += currentScore;
+    } else {
+        score0 += currentScore;
+    }
+    setScore(activePlayer);
+    checkWin();
+    if (playing) switchPlayer();
+}
+
 function switchPlayer() {
     currentScore = 0;
     setCurrentScore(activePlayer);
@@ -67,14 +74,6 @@ function checkWin() {
         dice.style.display = 'none';
         playing = false;
     }
-}
-
-function setCurrentScore(player) {
-    document.querySelector(`#current--${player}`).textContent = currentScore;
-}
-
-function setScore(player) {
-    document.querySelector(`#score--${player}`).textContent = player ? score1 : score0;
 }
 
 document.querySelector('.btn--roll').addEventListener('click', rollDice);
